@@ -39,6 +39,7 @@ HTTP headers are written in camelCase + hyphenated syntax, e.g. Foo-Request-Id.
 * [Sub-resource Collection](#sub-resource-collection)
 * [Sub-resource Singleton](#sub-resource-singleton)
 * [Idempotency](#idempotency)
+* [Concurrent Operations](#concurrent-perations)
 * [Asynchronous Operations](#asynchronous-operations)
 * [Controller Resources](#controller-resource)
     * [Complex Operation - Sub-resource](#complex-operation-sub-resource) 
@@ -491,7 +492,7 @@ The value of `path` is a string containing a [RFC 6901][3] JSON Pointer] that re
 
 #### `path` Parameter
 
-When JSON Pointer is used with arrays, concurrency protection is best implemented with ETags. See section [Concurrent Operations][#concurrent-operations] for how ETags are used to implment a concurrency projection. 
+When JSON Pointer is used with arrays, concurrency protection is best implemented with ETags. See section [Concurrent Operations](#concurrent-perations) for how `ETags` are used to implment a concurrency protection. 
 
 In many cases, ETags are not an option:
 
@@ -790,15 +791,16 @@ How to make the key unique is up to the client and it's agreed protocol with the
 
 
 <h2 id="concurrent-operations">Concurrent Operations</h2>
-Certain types of operations might produce unintentioanl behaviour when processed concurrently on the same resource. e.g. `PUT` operations or `UPDATE` operations. The behaviour would be a lost updates of one operation without any indication to the user. Therefore, the users of the API should be notified if similar situation occurs while processing.
 
-The standard solution is to use an `ETag` HEADER. Below we discuss a accepted workflow using ETag.
+Certain types of operations when processed concurrently on the same resource might overwrite changes to the resource. (e.g. `PUT` operations or `UPDATE` operations). Sometimes this may be misleading to the owner of the operation. Therefore, the operation owner could be notified of possible situation while processing.
 
-![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Cache_Control.png)
+The standard solution is to use an `ETag` HEADER and error code `412`. Below we depicts the accepted workflow.
 
-The implmentation of the versioning scheme for Etag should be at the decreation of the developer. Some possible options are, simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
+![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Concurrent.jpg)
 
-This flow requires additional read before each update transaction. This may introduce additional overhead on the backend system. **Therefore, the developer should make sure to use this technique only when required.** If this behavior is required and performance is a concern caching the version field used for Etag may be an option for some developers.
+The implementation of the versioning scheme for `Etag` should be at the descreation of the developer. Some possible options are, simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
+
+This flow requires an additional read before each update of the resource. This is to enforce the *isolation* requirement to avoid any lost updates. This may introduce additional overhead on the backend system. **Therefore, the developer should make sure to use this technique only when lost update prevention is a mandatory requirement.**
 
 <h2 id="asynchronous-operations">Asynchronous Operations</h2>
 
