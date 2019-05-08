@@ -798,7 +798,7 @@ The standard solution is to use an `ETag` HEADER and error code `412`. Below we 
 
 ![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Concurrent.jpg)
 
-The implementation of the versioning scheme for `Etag` should be at the descreation of the developer. Some possible options are, simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
+The implementation of the versioning scheme for `Etag` should be at the descreation of the developer. Some possible options are; simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
 
 This flow requires an additional read before each update of the resource. This is to enforce the *isolation* requirement to avoid any lost updates. This may introduce additional overhead on the backend system. **Therefore, the developer should make sure to use this technique only when lost update prevention is a mandatory requirement.**
 
