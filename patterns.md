@@ -800,7 +800,7 @@ The standard solution is to use an `ETag` HEADER and error code `412`. Below we 
 
 The implementation of the versioning scheme for `Etag` should be at the descreation of the developer. Some possible options are; simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
 
-This flow requires an additional read before each update of the resource. This is to enforce the *isolation* requirement to avoid any lost updates. This may introduce additional overhead on the backend system. **Therefore, the developer should make sure to use this technique only when lost update prevention is a mandatory requirement.**
+This flow requires an additional read before each update of the resource at the persistant store. This is to enforce the *isolation* requirement to avoid any lost updates. This may introduce additional overheads on the backend system. **Therefore, the developer should make sure to use this technique only when lost update prevention is a mandatory requirement.**
 
 <h2 id="asynchronous-operations">Asynchronous Operations</h2>
 
@@ -1360,7 +1360,7 @@ This section describes guidelines for handling bulk calls in APIs. There are two
 
 * **Homogeneous:** operation involves request and response payload representing collection of resources of the same type. Same operation is applied on all items in the collection.
 
-* **Heterogeneous:** operation involves a request and response payloads that contain one or more requests and reponse payloads respectively. Each nested request and response represents an operation on a specific type of resource. However, the container request and response have one or more operations operating on one or more types of resources. It is recommended to use a public domain standard such as *[OData Batch Specification] [1]* in such cases.
+* **Heterogeneous:** ~~operation involves a request and response payloads that contain one or more requests and reponse payloads respectively. Each nested request and response represents an operation on a specific type of resource. However, the container request and response have one or more operations operating on one or more types of resources. It is recommended to use a public domain standard such as *[OData Batch Specification] [1]* in such cases.~~ We do not recommend heterogeneous operations within Sysco API eco system. Please revert to SyscoLABS EAG for any assistance.
 
 This section only addresses bulk processing of payloads using the homogenous method.
 
