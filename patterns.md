@@ -39,7 +39,7 @@ HTTP headers are written in camelCase + hyphenated syntax, e.g. Foo-Request-Id.
 * [Sub-resource Collection](#sub-resource-collection)
 * [Sub-resource Singleton](#sub-resource-singleton)
 * [Idempotency](#idempotency)
-* [Concurrent Operations](#concurrent-perations)
+* [Concurrent Operations](#concurrent-operations)
 * [Asynchronous Operations](#asynchronous-operations)
 * [Controller Resources](#controller-resource)
     * [Complex Operation - Sub-resource](#complex-operation-sub-resource) 
@@ -492,7 +492,7 @@ The value of `path` is a string containing a [RFC 6901][3] JSON Pointer] that re
 
 #### `path` Parameter
 
-When JSON Pointer is used with arrays, concurrency protection is best implemented with ETags. See section [Concurrent Operations](#concurrent-perations) for how `ETags` are used to implment a concurrency protection. 
+When JSON Pointer is used with arrays, concurrency protection is best implemented with ETags. See section [Concurrent Operations](#concurrent-operations) for how `ETags` are used to implement a concurrency protection.
 
 In many cases, ETags are not an option:
 
