@@ -1,4 +1,3 @@
-/
 # API Design Patterns And Use Cases
 
 
@@ -795,7 +794,7 @@ Certain types of operations might produce unintentioanl behaviour when processed
 
 The standard solution is to use an `ETag` HEADER. Below we discuss a accepted workflow using ETag.
 
-![Etag Concurrent](assets/Etag_Concurrent.png)
+![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Cache_Control.png)
 
 The implmentation of the versioning scheme for Etag should be at the decreation of the developer. Some possible options are, simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
 
