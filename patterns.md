@@ -492,7 +492,7 @@ The value of `path` is a string containing a [RFC 6901][3] JSON Pointer] that re
 
 #### `path` Parameter
 
-When JSON Pointer is used with arrays, concurrency protection is best implemented with ETags. 
+When JSON Pointer is used with arrays, concurrency protection is best implemented with ETags. See section [Concurrent Operations][#concurrent-operations] for how ETags are used to implment a concurrency projection. 
 
 In many cases, ETags are not an option:
 
@@ -790,6 +790,16 @@ How to make the key unique is up to the client and it's agreed protocol with the
 * For other errors, the service MUST return the appropriate error message.
 
 
+<h2 id="concurrent-operations">Concurrent Operations</h2>
+Certain types of operations might produce unintentioanl behaviour when processed concurrently on the same resource. e.g. `PUT` operations or `UPDATE` operations. The behaviour would be a lost updates of one operation without any indication to the user. Therefore, the users of the API should be notified if similar situation occurs while processing.
+
+The standard solution is to use an `ETag` HEADER. Below we discuss a accepted workflow using ETag.
+
+![Etag Concurrent] (/Assets/Etag_Concurrent.png)
+
+The implmentation of the versioning scheme for Etag should be at the decreation of the developer. Some possible options are, simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
+
+This flow requires additional read before each update transaction. This may introduce additional overhead on the backend system. **Therefore, the developer should make sure to use this technique only when required.** If this behavior is required and performance is a concern caching the version field used for Etag may be an option for some developers.
 
 <h2 id="asynchronous-operations">Asynchronous Operations</h2>
 
