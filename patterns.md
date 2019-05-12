@@ -809,7 +809,7 @@ This flow requires an additional read before each update of the resource at the 
 
 Certain types of operations can be cached for better user response. For example if you know the frequency of change of the operation data client side caching a good option. If the operation is frequently used by the customers or the operation is resource intensive caching the operation is advantageous. See following flow explained in the diagram. It uses the `ETag` HEADER, `If-Not-Match` HEADER and error code `304`.
 
-![Etag Cache](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Cache_Control.png)
+![Etag Cache](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Cache_Control.svg)
 
 The implementation of the hash scheme for `Etag` should be at the desecration of the developer.
 

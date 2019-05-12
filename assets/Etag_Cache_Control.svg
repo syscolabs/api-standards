@@ -1,0 +1,360 @@
+<svg id="mermaid-1557667242960" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:575px;" viewBox="-75 -10 575 1223.8125"><style>
+
+
+#mermaid-1557667242960 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  color: #333; }
+
+#mermaid-1557667242960 .node rect,
+#mermaid-1557667242960 .node circle,
+#mermaid-1557667242960 .node ellipse,
+#mermaid-1557667242960 .node polygon {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1px; }
+
+#mermaid-1557667242960 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1557667242960 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1557667242960 .edgePath .path {
+  stroke: #333333;
+  stroke-width: 1.5px; }
+
+#mermaid-1557667242960 .edgeLabel {
+  background-color: #e8e8e8; }
+
+#mermaid-1557667242960 .cluster rect {
+  fill: #ffffde !important;
+  stroke: #aaaa33 !important;
+  stroke-width: 1px !important; }
+
+#mermaid-1557667242960 .cluster text {
+  fill: #333; }
+
+#mermaid-1557667242960 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1557667242960 .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1557667242960 text.actor {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1557667242960 .actor-line {
+  stroke: grey; }
+
+#mermaid-1557667242960 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1557667242960 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1557667242960 #arrowhead {
+  fill: #333; }
+
+#mermaid-1557667242960 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1557667242960 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1557667242960 .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1557667242960 .labelText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1557667242960 .loopText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1557667242960 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #CCCCFF; }
+
+#mermaid-1557667242960 .note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+
+#mermaid-1557667242960 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px; }
+
+#mermaid-1557667242960 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1557667242960 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1557667242960 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1557667242960 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1557667242960 .section0 {
+  fill: rgba(102, 102, 255, 0.49); }
+
+#mermaid-1557667242960 .section2 {
+  fill: #fff400; }
+
+#mermaid-1557667242960 .section1,
+#mermaid-1557667242960 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1557667242960 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1557667242960 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1557667242960 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1557667242960 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1557667242960 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px; }
+
+
+#mermaid-1557667242960 .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.3;
+  shape-rendering: crispEdges; }
+
+#mermaid-1557667242960 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1557667242960 .today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1557667242960 .task {
+  stroke-width: 2; }
+
+#mermaid-1557667242960 .taskText {
+  text-anchor: middle;
+  font-size: 11px; }
+
+#mermaid-1557667242960 .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px; }
+
+#mermaid-1557667242960 .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1557667242960 .taskText0,
+#mermaid-1557667242960 .taskText1,
+#mermaid-1557667242960 .taskText2,
+#mermaid-1557667242960 .taskText3 {
+  fill: white; }
+
+#mermaid-1557667242960 .task0,
+#mermaid-1557667242960 .task1,
+#mermaid-1557667242960 .task2,
+#mermaid-1557667242960 .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc; }
+
+#mermaid-1557667242960 .taskTextOutside0,
+#mermaid-1557667242960 .taskTextOutside2 {
+  fill: black; }
+
+#mermaid-1557667242960 .taskTextOutside1,
+#mermaid-1557667242960 .taskTextOutside3 {
+  fill: black; }
+
+
+#mermaid-1557667242960 .active0,
+#mermaid-1557667242960 .active1,
+#mermaid-1557667242960 .active2,
+#mermaid-1557667242960 .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc; }
+
+#mermaid-1557667242960 .activeText0,
+#mermaid-1557667242960 .activeText1,
+#mermaid-1557667242960 .activeText2,
+#mermaid-1557667242960 .activeText3 {
+  fill: black !important; }
+
+
+#mermaid-1557667242960 .done0,
+#mermaid-1557667242960 .done1,
+#mermaid-1557667242960 .done2,
+#mermaid-1557667242960 .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2; }
+
+#mermaid-1557667242960 .doneText0,
+#mermaid-1557667242960 .doneText1,
+#mermaid-1557667242960 .doneText2,
+#mermaid-1557667242960 .doneText3 {
+  fill: black !important; }
+
+
+#mermaid-1557667242960 .crit0,
+#mermaid-1557667242960 .crit1,
+#mermaid-1557667242960 .crit2,
+#mermaid-1557667242960 .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2; }
+
+#mermaid-1557667242960 .activeCrit0,
+#mermaid-1557667242960 .activeCrit1,
+#mermaid-1557667242960 .activeCrit2,
+#mermaid-1557667242960 .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2; }
+
+#mermaid-1557667242960 .doneCrit0,
+#mermaid-1557667242960 .doneCrit1,
+#mermaid-1557667242960 .doneCrit2,
+#mermaid-1557667242960 .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1557667242960 .doneCritText0,
+#mermaid-1557667242960 .doneCritText1,
+#mermaid-1557667242960 .doneCritText2,
+#mermaid-1557667242960 .doneCritText3 {
+  fill: black !important; }
+
+#mermaid-1557667242960 .activeCritText0,
+#mermaid-1557667242960 .activeCritText1,
+#mermaid-1557667242960 .activeCritText2,
+#mermaid-1557667242960 .activeCritText3 {
+  fill: black !important; }
+
+#mermaid-1557667242960 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black; }
+
+#mermaid-1557667242960 g.classGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 10px; }
+
+#mermaid-1557667242960 g.classGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1557667242960 g.classGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1557667242960 .classLabel .label {
+  fill: #9370DB;
+  font-size: 10px; }
+
+#mermaid-1557667242960 .relation {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1557667242960 #compositionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 #compositionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 #aggregationStart {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 #aggregationEnd {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 #dependencyStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 #dependencyEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 #extensionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 #extensionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1557667242960 .commit-id,
+#mermaid-1557667242960 .commit-msg,
+#mermaid-1557667242960 .branch-label {
+  fill: lightgrey;
+  color: lightgrey; }
+</style><style>#mermaid-1557667242960 {
+    color: rgba(0, 0, 0, 0.65098);
+    font: normal normal normal normal 14px/21px "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }</style><g></g><g><line id="actor387" x1="75" y1="5" x2="75" y2="1212.8125" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;"><tspan x="75" dy="0">Browser</tspan></text></g><g><line id="actor388" x1="275" y1="5" x2="275" y2="1212.8125" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;"><tspan x="275" dy="0">Server</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0px, 0px;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0px, 0px;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">HTTP First Request</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="200" y="110" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="196" y="134" fill="black" class="noteText"><tspan x="216" fill="black">Based on Resource Data</tspan></text></g><g><text x="275" y="174.28125" class="messageText" style="text-anchor: middle;">Calculate ETag</text><path d="M 275,181.28125 C 335,171.28125 335,211.28125 275,201.28125" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><text x="175" y="239.28125" class="messageText" style="text-anchor: middle;">Response + ETag=12345</text><line x1="275" y1="246.28125" x2="75" y2="246.28125" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3px, 3px; fill: none;"></line></g><g><text x="75" y="274.28125" class="messageText" style="text-anchor: middle;">Cache Data</text><path d="M 75,281.28125 C 135,271.28125 135,311.28125 75,301.28125" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><rect x="300" y="321.28125" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="296" y="345.28125" fill="black" class="noteText"><tspan x="316" fill="black">(If-Not-Match: 12345)</tspan></text></g><g><text x="175" y="385.5625" class="messageText" style="text-anchor: middle;">HTTP Second Request</text><line x1="75" y1="392.5625" x2="275" y2="392.5625" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="200" y="402.5625" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="196" y="426.5625" fill="black" class="noteText"><tspan x="216" fill="black">Based on Resource Data</tspan></text></g><g><text x="275" y="466.84375" class="messageText" style="text-anchor: middle;">Calculate ETag</text><path d="M 275,473.84375 C 335,463.84375 335,503.84375 275,493.84375" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><rect x="300" y="513.84375" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="296" y="537.84375" fill="black" class="noteText"><tspan x="316" fill="black">and compare with If-Not-Match</tspan></text></g><g><rect x="200" y="560.125" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="196" y="584.125" fill="black" class="noteText"><tspan x="216" fill="black">(no resource data change)</tspan></text></g><g><text x="175" y="624.40625" class="messageText" style="text-anchor: middle;">Response Error Code 304</text><line x1="275" y1="631.40625" x2="75" y2="631.40625" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3px, 3px; fill: none;"></line></g><g><rect x="0" y="641.40625" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="-4" y="665.40625" fill="black" class="noteText"><tspan x="16" fill="black">Continue with</tspan></text></g><g><text x="75" y="705.6875" class="messageText" style="text-anchor: middle;">Cache Data</text><path d="M 75,712.6875 C 135,702.6875 135,742.6875 75,732.6875" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><text x="175" y="770.6875" class="messageText" style="text-anchor: middle;">HTTP Second Request + If-Not-Match: 12345</text><line x1="75" y1="777.6875" x2="275" y2="777.6875" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="200" y="787.6875" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="196" y="811.6875" fill="black" class="noteText"><tspan x="216" fill="black">Based on Resource Data</tspan></text></g><g><text x="275" y="851.96875" class="messageText" style="text-anchor: middle;">Calculate ETag  (resource data changed)</text><path d="M 275,858.96875 C 335,848.96875 335,888.96875 275,878.96875" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><rect x="300" y="898.96875" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="296" y="922.96875" fill="black" class="noteText"><tspan x="316" fill="black">and compare with If-Not-Match</tspan></text></g><g><rect x="200" y="945.25" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="196" y="969.25" fill="black" class="noteText"><tspan x="216" fill="black">(resource data changed)</tspan></text></g><g><text x="175" y="1009.53125" class="messageText" style="text-anchor: middle;">Response + ETag=67890</text><line x1="275" y1="1016.53125" x2="75" y2="1016.53125" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3px, 3px; fill: none;"></line></g><g><rect x="0" y="1026.53125" fill="#EDF2AE" stroke="#666" width="150" height="36.28125" rx="0" ry="0" class="note"></rect><text x="-4" y="1050.53125" fill="black" class="noteText"><tspan x="16" fill="black">Replace</tspan></text></g><g><text x="75" y="1090.8125" class="messageText" style="text-anchor: middle;">Cache Data</text><path d="M 75,1097.8125 C 135,1087.8125 135,1127.8125 75,1117.8125" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><rect x="0" y="1147.8125" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="1180.3125" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;"><tspan x="75" dy="0">Browser</tspan></text></g><g><rect x="200" y="1147.8125" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="1180.3125" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;"><tspan x="275" dy="0">Server</tspan></text></g></svg>
