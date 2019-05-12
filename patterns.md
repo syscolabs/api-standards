@@ -797,7 +797,7 @@ Certain types of operations when processed concurrently on the same resource mig
 
 The standard solution is to use an `ETag` HEADER, `If-Match` HEADER and error code `412`. Below we depicts the accepted workflow.
 
-![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Concurrent.jpg)
+![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Concurrent.svg)
 
 The implementation of the versioning scheme for `Etag` should be at the descreation of the developer. Some possible options are; simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
 
