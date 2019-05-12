@@ -40,6 +40,7 @@ HTTP headers are written in camelCase + hyphenated syntax, e.g. Foo-Request-Id.
 * [Sub-resource Singleton](#sub-resource-singleton)
 * [Idempotency](#idempotency)
 * [Concurrent Operations](#concurrent-operations)
+* [Cached Operations](#cached-operations)
 * [Asynchronous Operations](#asynchronous-operations)
 * [Controller Resources](#controller-resource)
     * [Complex Operation - Sub-resource](#complex-operation-sub-resource) 
@@ -794,13 +795,23 @@ How to make the key unique is up to the client and it's agreed protocol with the
 
 Certain types of operations when processed concurrently on the same resource might overwrite changes to the resource. (e.g. `PUT` operations or `UPDATE` operations). Sometimes this may be misleading to the owner of the operation. Therefore, the operation owner could be notified of possible situation while processing.
 
-The standard solution is to use an `ETag` HEADER and error code `412`. Below we depicts the accepted workflow.
+The standard solution is to use an `ETag` HEADER, `If-Match` HEADER and error code `412`. Below we depicts the accepted workflow.
 
 ![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Concurrent.jpg)
 
 The implementation of the versioning scheme for `Etag` should be at the descreation of the developer. Some possible options are; simple numeric value maintained by the application, a database sequence, [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a similar random identifier.
 
+Error `412` is raised in case of failing to match the current version of the resource as in the repository with value of `If-Match` HEADER of the request.
+
 This flow requires an additional read before each update of the resource at the persistant store. This is to enforce the *isolation* requirement to avoid any lost updates. This may introduce additional overheads on the backend system. **Therefore, the developer should make sure to use this technique only when lost update prevention is a mandatory requirement.**
+
+<h2 id="cached-operations">Cached Operations</h2>
+
+Certain types of operations can be cached for better user response. For example if you know the frequency of change of the operation data client side caching a good option. If the operation is frequently used by the customers or the operation is resource intensive caching the operation is advantageous. See following flow explained in the diagram. It uses the `ETag` HEADER, `If-Not-Match` HEADER and error code `304`.
+
+![Etag Cache](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Cache_Control.png)
+
+The implementation of the hash scheme for `Etag` should be at the desecration of the developer.
 
 <h2 id="asynchronous-operations">Asynchronous Operations</h2>
 
