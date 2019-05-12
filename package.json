@@ -1,0 +1,17 @@
+{
+  "name": "syscolabs.api-standards.github.io",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "mkdir -p ./content/scripts && cp -r *.md ./content && cp node_modules/mermaid/dist/mermaid.min.js content/scripts/",
+    "upgrade": "yarn-upgrade-all && cp node_modules/mermaid/dist/mermaid.min.js content/scripts/",
+    "watch": "gitbook serve ./content ./www",
+    "release": "gitbook build ./content ./www && cp -r www/* ../syscolabs.api-standards.github.io/"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2",
+    "mermaid": "^8.0.0-rc.6",
+    "standard": "^11.0.1",
+    "yarn-upgrade-all": "^0.3.0"
+  }
+}
