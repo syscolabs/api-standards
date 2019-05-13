@@ -1,0 +1,47 @@
+sequenceDiagram
+    participant C1
+    participant C2
+    C1->>OrderService: GET /Order/1
+    OrderService->>OrderRepo: Select Order 1
+    OrderRepo-->>OrderService: Order Id=1,Version=0
+    OrderService-->>C1: Order Etag=0
+    C2->>OrderService: GET /Order/1
+    OrderService->>OrderRepo: Select Order 1
+    OrderRepo-->>OrderService: Order Id=1,Version=0
+    OrderService-->>C2: Order Etag=0
+    C1->>OrderService: PUT /Order/1 (If-match=0)
+    OrderService->>OrderRepo: Select Order 1
+    OrderRepo-->>OrderService: Order Id=1,Version=0
+    OrderService->>OrderRepo: Update Order 1
+    OrderRepo-->>OrderService: Order Id=1,Version=1
+    OrderService-->>C1: OK (200) Etag=1
+    C2->>OrderService: PUT /Order/1 (If-match=0)
+    OrderService->>OrderRepo: Select Order 1
+    OrderRepo-->>OrderService: Order Id=1,Version=1
+    OrderService-->>C2: Precondition Failed (412)
+
+
+sequenceDiagram
+    Browser->>Server: HTTP Request 1
+    Note over Server: Resource Data
+    Server->>Server: Calculate ETag
+    Server-->>Browser: Response + ETag=12345
+    Browser->>Browser: Cache Data
+
+    Browser->>Server: HTTP Request 2 + If-Not-Match: 12345
+    Note over Server: Resource Data
+    Server->>Server:Calculate ETag  
+    alt If-Not-Match = Etag
+    Server-->>Browser: Error Code 304
+    end
+    Note over Browser: Continue Cached
+
+    Browser->>Server: HTTP Request 3 + If-Not-Match: 12345
+    Note over Server: New Resource Data
+    Server->>Server: Calculate ETag
+    alt If-Not-Match <> Etag
+    Server-->>Browser: Response + ETag=67890
+    end
+    Note over Browser: Replace Cache
+    Browser->>Browser: Cache Data
+   
