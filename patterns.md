@@ -795,7 +795,7 @@ How to make the key unique is up to the client and it's agreed protocol with the
 
 Certain types of operations when processed concurrently on the same resource might overwrite changes to the resource. (e.g. `PUT` operations or `UPDATE` operations). Sometimes this may be misleading to the owner of the operation. Therefore, the operation owner could be notified of possible situation while processing.
 
-The standard solution is to use an `ETag` HEADER, `If-Match` HEADER and error code `412`. Below we depicts the accepted workflow.
+The standard solution is to use an `ETag` HEADER, `If-Match` HEADER and error code `412` (precondition failed). Below we depicts the accepted workflow.
 
 ![Etag Concurrent](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Concurrent.svg)
 
@@ -807,7 +807,7 @@ This flow requires an additional read before each update of the resource at the 
 
 <h2 id="cached-operations">Cached Operations</h2>
 
-Certain types of operations can be cached for better user response. For example if you know the frequency of change of the operation data client side caching a good option. If the operation is frequently used by the customers or the operation is resource intensive caching the operation is advantageous. See following flow explained in the diagram. It uses the `ETag` HEADER, `If-Not-Match` HEADER and error code `304`.
+Certain types of operations can be cached for better user response. For example if you know the frequency of change for the data, the data can be cached at client side for sometime. If the data access operation is frequently used by its customers or the operation is resource intensive, caching the data at client is advantageous. See following flow explained in the diagram. It uses the `ETag` HEADER, `If-Not-Match` HEADER and error code `304` (Not modified).
 
 ![Etag Cache](https://github.com/syscolabs/api-standards/blob/master/assets/Etag_Cache_Control.svg)
 
